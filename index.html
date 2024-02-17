@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Visual Business Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    body {
+      background-color: #3C4043; backgoundcolor */
+      font-family: Arial, sans-serif;
+      color: #fff; /* Text color */
+      margin: 0; /* Remove default margin */
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      text-align: center;
+      position: relative;
+    }
+
+
+    /* Removed .pic a CSS rules */
+
+    .icon {
+      font-size: 30px;
+      color: #0077b5;
+    }
+
+    /* Create a container for social icons */
+    .social-icons-container {
+      background-color: #695C57;
+      max-width: 465px;
+      height: 60px; /* Reduce the height */
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      align-items: center;
+      margin: 5px auto; /* Center the container horizontally */
+    }
+
+
+
+
+    /* Move the button to the left side */
+    .save-contact {
+      background-color: #695C57;
+      max-width: 465px;
+      height: 20px; /* Reduce the height */
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      align-items: center;
+      margin: 10x auto; /* Center the container horizontally */
+    }
+
+.pic-container {
+  background-color: #fff;
+  max-width: 465px;
+  max-height: 206px;
+  display: flex;
+  flex-direction: column; /* Make the children stack vertically */
+  justify-content: center; /* Center the children vertically */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  align-items: center;
+  margin: 20px auto;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 50px; /* Reduce padding for smaller screens */
+  }
+
+  .icon {
+    font-size: 20px; /* Adjust the font size for the first icon */
+    color: #0077b5;
+    margin-bottom: 10px;
+    text-align: center; /* Center the first icon */
+  }
+
+  .social-icons-container {
+    max-width: 100%; /* Adjust max-width for mobile screens */
+    flex-wrap: wrap; /* Allow icons to wrap to the next line */
+  }
+
+  .social-icons-container a {
+    margin: 2px; /* Adjust spacing between icons for mobile screens */
+    margin-bottom: 20px;
+  }
+
+  .save-contact {
+    margin-top: 10px;
+    padding: 20px; /* Reduce padding for smaller screens */
+    text-align: center; /* Center the button text */
+  }
+}
+
+
+
+  </style>
+
+<script>
+  function saveContact() {
+    // Get the contact information
+    var name = "Wasily Tessin";
+    var phoneNumber1 = "+375162299050";
+    var whatsappNumber = "+375296774789";
+    var email = "tessin.wasily@bremor.com";
+    var companyName = "Head of Export Department Bremor";
+    var address = "JV Santa Bremor LLC, Katin Bor str, 106, 224701, Brest, Belarus"; // Replace this with the actual address
+    var websiteUrl = "https://www.bremor.com";
+
+
+    var vCard = `BEGIN:VCARD
+VERSION:3.0
+N:${name};;;;
+ORG:${companyName}
+TEL;TYPE=CELL:${phoneNumber1}
+TEL;TYPE=WHATSAPP:${whatsappNumber}
+EMAIL:${email}
+ADR;TYPE=WORK:;;${address}
+URL:${websiteUrl}
+END:VCARD`;
+
+    var dataUrl = "data:text/vcard;charset=utf-8," + encodeURIComponent(vCard);
+
+    window.open(dataUrl);
+  }
+</script>
+
+</head>
+<body>
+<div class="pic-container">
+  <img src="logo1.png" alt="Description of the image">
+</div>
+  <div class="social-icons-container">
+    <a href="https://wa.link/mp43st"><img src="whatsapp.png" alt="WhatsApp"></a>
+    <a href="mailto:tessin.wasily@bremor.com"><img src="mail.png" alt="Email"></a>
+    <a href="https://www.bremor.com"><img src="web.png" alt="website"></a>
+ 
+
+ </div>
+
+  <div class="save-contact">
+    <a href="#" onclick="saveContact()">
+      <img src="d.png" alt="Save Contact">
+    </a>
+  </div>
+</div>
+</body>
+</html>
